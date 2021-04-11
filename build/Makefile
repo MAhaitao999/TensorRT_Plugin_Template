@@ -14,13 +14,15 @@ OBJ_DIR = obj
 OBJ = $(shell find $(OBJ_DIR) -name *.o 2>/dev/null)
 DEP = $(OBJ:.o=.d)
 
-SO = AddPlugin.so AddPluginDyn.so GridSamplerPlugin.so
+SO = AddPlugin.so AddPluginDyn.so GridSamplerPlugin.so ClipPlugin.so
 
 all: $(SO)
 
 AddPlugin.so: $(addprefix $(OBJ_DIR)/, AddPlugin.o)
 AddPluginDyn.so: $(addprefix $(OBJ_DIR)/, AddPluginDyn.o)
 GridSamplerPlugin.so: $(addprefix $(OBJ_DIR)/, GridSamplerPlugin.o)
+ClipPlugin.so: $(addprefix $(OBJ_DIR)/, ClipPlugin.o)
+
 
 -include $(DEP)
 
