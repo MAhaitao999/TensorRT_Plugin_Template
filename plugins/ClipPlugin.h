@@ -5,8 +5,12 @@
 #include <vector>
 #include <string>
 
+// 未命名的命名空间(unnamed namespace): 是指关键字namespace后紧跟花括号括起来的一系列声明语句.
+// 未命名的命名空间中定义的变量拥有静态生命周期: 它们在第一次使用前创建, 并且直到程序结束才销毁.
+namespace {
 static const char* CLIP_PLUGIN_VERSION{"1"};
 static const char* CLIP_PLUGIN_NAME{"CustomClipPlugin"};
+}
 
 // 帮助函数，用于序列化plugin
 template<typename T>
